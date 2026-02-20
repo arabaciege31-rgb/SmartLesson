@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Lesson AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      width: 400px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+    img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #4338ca;
+    }
+    .answer {
+      margin-top: 15px;
+      background: #f4f4ff;
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <img src="logo.png" alt="Smart Lesson Logo">
+  <h2>🤖 Smart Lesson AI</h2>
+
+  <p>Konu yaz:</p>
+  <input id="question" placeholder="Örn: Fotosentez nedir?">
+
+  <button onclick="answer()">Sor</button>
+
+  <div class="answer" id="response">
+    Burada yapay zekâ cevap verecek.
+  </div>
+</div>
+
+<script>
+  function answer() {
+    const q = document.getElementById("question").value.toLowerCase();
+    let r = "Bu konuyu senin seviyene uygun şekilde anlatıyorum.";
+
+    if (q.includes("fotosentez")) {
+      r = "Fotosentez, bitkilerin güneş ışığını kullanarak kendi besinlerini üretmesidir 🌱";
+    } 
+    else if (q.includes("python")) {
+      r = "Python, öğrenmesi kolay ve güçlü bir programlama dilidir 💻";
+    } 
+    else if (q.includes("matematik")) {
+      r = "Matematik, problem çözme ve mantık geliştirme becerisini artırır 🔢";
+    }
+
+    document.getElementById("response").innerText = r;
+  }
+</script>
+
+</body>
+</html>
